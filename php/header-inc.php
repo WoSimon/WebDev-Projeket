@@ -17,6 +17,7 @@
         <?php
     
             if (isset($_SESSION["CustomerID"])) {
+                echo "<a href='reservations.php'>Reservierungen</a>";
                 echo "<a href='php/logout-inc.php'>Ausloggen</a>";
                 echo "<a></a>";
                 echo "<a><b>Hallo " .$_SESSION['name']. "!</b></a>";
