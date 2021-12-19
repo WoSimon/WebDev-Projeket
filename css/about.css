@@ -1,0 +1,140 @@
+/* Anfang der History Sektion */
+.history .history-row{
+    margin-top: 150px;
+    border: var(--border);
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+    border-radius: 3em;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.history .history-row .history-image{
+    flex:1 1 30rem;
+}
+
+.history .history-row .history-image img{
+    border-radius: 3em;
+    width: 100%;
+    height: 100%;
+}
+
+.history .history-row .history-image:hover img{
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255,255,255,.7);
+}
+
+.history .history-row .history-content{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.history .history-row .history-content h3{
+    font-size: 3rem;
+    color:#fff;
+    border-bottom: var(--border);
+}
+
+.history .history-row .history-content p{
+    font-size: 1.6rem;
+    color:#ccc;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+/* Ende der History Sektion */
+
+/* Anfang der Us Sektion */
+.us .us-row{
+    border: var(--border);
+    margin-block: 25px;
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+    border-radius: 3em;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.us .us-row .us-image{
+    flex:1 1 30rem;
+}
+
+.us .us-row .us-image img{
+    border-radius: 3em;
+    width: 100%;
+    height: 100%;
+}
+
+.us .us-row .us-image:hover img{
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255,255,255,.7);
+}
+
+.us .us-row .us-content{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.us .us-row .us-content h3{
+    font-size: 3rem;
+    color:#fff;
+    border-bottom: var(--border);
+}
+
+.us .us-row .us-content p{
+    font-size: 1.6rem;
+    color:#ccc;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+/* Ende der Us Sektion */
+
+/* Anfang der special Sektion*/
+.special .special-row{
+    border: var(--border);
+    margin-bottom: 50px;
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+    border-radius: 3em;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+}
+
+.special .special-row .special-image{
+    flex:1 1 30rem;
+}
+
+.special .special-row .special-image img{
+    border-radius: 3em;
+    width: 100%;
+    height: 100%;
+}
+
+.special .special-row .special-image:hover img{
+    transform: scale(1.2);
+    box-shadow: 0 0 20px rgba(255,255,255,.7);
+}
+
+.special .special-row .special-content{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    padding:2rem;
+}
+
+.special .special-row .special-content h3{
+    font-size: 3rem;
+    color:#fff;
+    border-bottom: var(--border);
+}
+
+.special .special-row .special-content p{
+    font-size: 1.6rem;
+    color:#ccc;
+    padding:1rem 0;
+    line-height: 1.8;
+}
+/* Ende der special Sektion*/
