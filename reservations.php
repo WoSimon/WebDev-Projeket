@@ -57,7 +57,7 @@
 
                         echo $_SESSION['CustomerID'];
 
-                        $res_sql = "SELECT `ReservationID`,`ProductID`,`Time` FROM `ProductReservation` WHERE `CustomerID` = " . $_SESSION["CustomerID"] . ";";
+                        $res_sql = "SELECT `ReservationID`,`ProductID`,`Time` FROM `ProductReservation` WHERE `CustomerID` = " . $_SESSION["CustomerID"] . " ORDER BY `ReservationID` DESC;";
                         $rs = mysqli_query($conn, $res_sql);
 
                         if($rs -> num_rows > 0){
