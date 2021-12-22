@@ -56,6 +56,50 @@
 
     }
 
+    function userExists($conn, $user){
+        $sql = "SELECT * FROM `Admin` WHERE `Username` = '".$user."';";
+        $rs = mysqli_query($conn, $sql);
+
+        if($rs -> num_rows > 0){
+            $result = true;
+        }
+        else{
+            $result = false;
+        }
+        return $result;
+    }
+
+
+    function loginAdmin($conn, $user, $pwd){
+        $userExists = userExists($conn, $user);
+        
+        if ($userExists === false) {
+            header("location: ../admin-login.php?error=usernotexist");
+            exit();
+        }
+        
+        $sql = "SELECT * FROM `Admin` WHERE `Username` = '" .$user. "';";
+        $rs = mysqli_query($conn, $sql);
+        while ($i = $rs -> fetch_assoc()){
+            $AdminPwd = $i['Password'];
+            $AdminID = $i['Admin_ID'];
+            $name = $i['Username'];
+        }
+        
+        if ($AdminPwd !== $pwd) {
+            header("location: ../admin-login.php?error=wrongpassword");
+            exit(); 
+        }
+        elseif ($AdminPwd === $pwd) {
+            session_start();
+            $_SESSION["AdminID"] = $AdminID;
+            $_SESSION["user"] = $username;
+            header("location: ../admin.php?login=successful");
+            exit();
+        }
+
+    }
+
     function pwdDontMatch($pwd, $pwdRepeat){
         if ($pwd !== $pwdRepeat){
             $result = true;
