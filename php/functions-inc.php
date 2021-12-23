@@ -93,7 +93,7 @@
         elseif ($AdminPwd === $pwd) {
             session_start();
             $_SESSION["AdminID"] = $AdminID;
-            $_SESSION["user"] = $username;
+            $_SESSION["user"] = $user;
             header("location: ../admin.php?login=successful");
             exit();
         }

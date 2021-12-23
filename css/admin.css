@@ -1,0 +1,100 @@
+.admin-content h1{
+    color: #fff;
+    font-size: 5rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.admin-content .admin-row{
+    height: max-content;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+    border-radius: 3em;
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+    border: var(--border);
+}
+
+/* Anfang der admin Info */
+.admin-content .admin-row .admin-info{
+    flex:1 3 20rem;
+    overflow-x: hidden;
+}
+
+.admin-content .admin-row .admin-info .info-text{
+    padding-block: 30px;
+    padding-left: 10px;
+    height: fit-content;
+    width: 100%;
+}
+
+.admin-content .admin-row .admin-info .info-text h4{
+    margin-left: 10px;
+    color: grey;
+    font-size: 3rem;
+    letter-spacing: 1px;
+}
+
+.admin-content .admin-row .admin-info .info-text h4 span{
+    color: var(--main-color);
+}
+
+.admin-content .admin-row .admin-info .info-text h5{
+    margin-left: 10px;
+    color: grey;
+    font-size: 2.5rem;
+    letter-spacing: .7px;
+}
+
+.admin-content .admin-row .admin-info .info-text h5 span{
+    color: var(--main-color);
+}
+
+.admin-content .admin-row .admin-info h3{
+    margin-top: 20px;
+    margin-left: 10px;
+    font-size: 2rem;
+    color:#fff;
+}
+
+.admin-content .admin-row .admin-info p{
+    margin-left: 10px;
+    font-size: 1.6rem;
+    color:rgb(200, 200, 200);
+    padding:1rem 0;
+    line-height: 1.8;
+}
+/* Ende der admin Info */
+
+/* Anfang des admin Textes */
+.admin-content .admin-row .admin-text{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    padding:3rem;
+    margin: 30px;
+    background: rgb(83, 83, 83);
+}
+
+.admin-content .admin-row .admin-text h2{
+    font-size: 3rem;
+    color:#fff;
+    border-bottom: 5px solid #fff;
+}
+
+.admin-content .admin-row .admin-text tr{
+    margin-block: 20px;
+}
+
+
+.admin-content .admin-row .admin-text h4{
+    font-size: 1.5rem;
+    color:rgb(230, 230, 230);
+}
+
+.admin-content .admin-row .admin-text td .stat h4{
+    text-align: right;
+    font-size: 2rem;
+    color:#fff;
+}
+/* Ende des admin Textes */
