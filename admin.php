@@ -17,12 +17,11 @@
 
         <title>Awesome Coffee | Adminbereich </title>
 
-        <!-- Link zur Admin CSS Datei  -->
-        <link rel="stylesheet" href="css/admin.css">
-
         <!-- Link zur Allgemeinen CSS Datei  -->
         <link rel="stylesheet" href="css/style.css">
-
+        
+        <!-- Link zur Admin CSS Datei  -->
+        <link rel="stylesheet" href="css/admin.css">
     </head>
 <body>
 
@@ -35,8 +34,9 @@
         
         <div class="admin-row">
     
-            <div class="admin-text">
-                <a href="" class="btn">Datenbankbestände ändern</a>
+            <div class="admin-button">
+                <a href="admin-update.php" class="btn">Datenbankbestände ändern</a>
+                <a href="php/logout-inc.php" class="btn">Auloggen</a>
             </div>
 
             <div class="admin-text">
@@ -67,36 +67,20 @@
                 $rs = mysqli_query($conn, $reservations_sql);
                 $reservations = $rs -> num_rows;
 
-                echo "<table>";
-
-                    echo "<tr>";
-                        echo "<td><h4>Gesamtzahl an Registrtierten Nutzern</h4></td>";
-                        echo "<td class='stat'><h4>$numCustomers</h4></td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo "<td><h4>Reservierte Produkte in der letzten Woche</h4></td>";
-                        echo "<td class='stat'><h4>$lastWeek</h4></td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo "<td><h4>Reservierte Produkte im letzten Monat</h4></td>";
-                        echo "<td class='stat'><h4>$lastMonth</h4></td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo "<td><h4>Reservierte Produkte im letzten Jahr</h4></td>";
-                        echo "<td class='stat'><h4>$lastYear</h4></td>";
-                    echo "</tr>";
-                    echo "<tr>";
-                        echo "<td><h4>Gesamt reservierte Produkte</h4></td>";
-                        echo "<td class='stat'><h4>$reservations</h4></td>";
-                    echo "</tr>";
-
-                echo "</table>";
-
+                echo "<h4>Gesamtzahl an Registrtierten Nutzern: <span>" . $numCustomers . "</span></h4>";
+                echo "<br>";
+                echo "<br>";
+                echo "<h4>Reservierte Produkte in der letzten Woche: <span>" . $lastWeek . "</span></h4>";
+                echo "<br>";
+                echo "<h4>Reservierte Produkte im letzten Monat: <span>" . $lastMonth . "</span></h4>";
+                echo "<br>";
+                echo "<h4>Reservierte Produkte im letzten Jahr: <span>" . $lastYear . "</span></h4>";
+                echo "<br>";
+                echo "<h4>Gesamt reservierte Produkte: <span>" . $reservations . "</span></h4>";
                 
                 ?>
             </div>
     
-
         </div>
     
     </section>
