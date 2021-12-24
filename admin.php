@@ -2,7 +2,7 @@
 
     session_start();
     if (!isset($_SESSION["AdminID"])) {
-        header("location: ../admin-login.php?error=noeinloggen");
+        header("location: admin-login.php?error=nologin");
         exit();
     }
 
@@ -16,12 +16,14 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <title>Awesome Coffee | Adminbereich </title>
-
+            
         <!-- Link zur Allgemeinen CSS Datei  -->
         <link rel="stylesheet" href="css/style.css">
-        
+
         <!-- Link zur Admin CSS Datei  -->
-        <link rel="stylesheet" href="css/admin.css">
+        <link rel="stylesheet" href="css/adminV2.css">
+    
+        
     </head>
 <body>
 
@@ -35,7 +37,7 @@
         <div class="admin-row">
     
             <div class="admin-button">
-                <a href="admin-update.php" class="btn">Datenbankbestände ändern</a>
+                <button onclick="loadUpdate()" class="btn">Datenbankbestände ändern</button>
                 <a href="php/logout-inc.php" class="btn">Auloggen</a>
             </div>
 
@@ -82,8 +84,33 @@
             </div>
     
         </div>
-    
+
+        <div id="dynarea">
+        </div>
+
     </section>
+
+
+
+    <script>
+
+        function loadUpdate(){
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function(){
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById("dynarea").innerHTML = this.responseText;
+                }
+                else if(this.readyState == 4 && this.status == 404){
+                    var msg404 = document.createTextNode("Ressource kann aktuell nicht bereitgestellt werden! Fahren Sie fort...");
+                    document.getElementById("dynarea").appendChild(msg404);
+                }
+            }
+            xhttp.open("GET", "admin-update.php", true);
+            xhttp.send();
+        }
+
+
+    </script>
     
 </body>
 </html>

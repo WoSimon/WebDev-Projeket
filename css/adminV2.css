@@ -1,0 +1,120 @@
+.admin-content h1{
+    color: #fff;
+    font-size: 5rem;
+    text-align: center;
+    padding: 20px;
+}
+
+.admin-content .admin-row{
+    height: max-content;
+    display: flex;
+    align-items: center;
+    background:var(--black);
+    flex-wrap: wrap;
+    border-radius: 3em;
+    box-shadow: 0 0 20px rgba(255,255,255,.5);
+    border: var(--border);
+    margin-bottom: 30px;
+}
+
+.admin-content .admin-row .admin-button{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    display: flexbox;
+    width: fit-content;
+}
+
+.admin-content .admin-row .admin-button .btn{
+    margin-left: 20px;
+    width: fit-content;
+    display:grid;
+}
+
+.admin-content .admin-row .admin-text{
+    border-radius: 3em;
+    flex:1 1 45rem;
+    padding:3rem;
+    margin: 30px;
+    background: rgb(83, 83, 83);
+    width: max-content;
+}
+
+.admin-content .admin-row .admin-text h2{
+    font-size: 3rem;
+    color:#fff;
+    border-bottom: 5px solid #fff;
+}
+
+.admin-content .admin-row .admin-text h4{
+    font-size: 1.5rem;
+    color:rgb(230, 230, 230);
+}
+
+.admin-content .admin-row .admin-text h4 span{
+    font-size: 2rem;
+    color:#fff;
+}
+
+.admin-content .admin-row form{
+    flex:1 1 45rem;
+    padding:5rem 2rem;
+    text-align: center;
+}
+
+.admin-content .admin-row form h3{
+    text-transform: uppercase;
+    font-size: 3.5rem;
+    color:#fff;
+}
+
+.admin-content .admin-row form h3 span{
+    color: var(--main-color);
+}
+
+.admin-content .admin-row form .inputBox{
+    border-radius: 3em;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    background:var(--bg);
+    border:var(--border);
+}
+
+.admin-content .admin-row form .inputBox:focus-within{
+    border: 3px solid var(--main-color);
+    box-shadow: 0 0 15px var(--main-color);
+}
+
+.admin-content .admin-row form .inputBox span{
+    color:#fff;
+    font-size: 2rem;
+    padding-left: 2rem;
+}
+
+.admin-content .admin-row form .inputBox input{
+    width: 100%;
+    padding:2rem;
+    font-size: 1.7rem;
+    color:#fff;
+    text-transform: none;
+    background:none;
+}
+
+.admin-content .admin-row form .inputBox select{
+    width: 90%;
+    height: 50px;
+    padding-left: 2rem;
+    font-size: 1.7rem;
+    color:#fff;
+    background: none;
+}
+
+.admin-content .admin-row form .inputBox textarea{
+    width: 100%;
+    padding:2rem;
+    font-size: 1.7rem;
+    color:#fff;
+    text-transform: none;
+    background:none;
+}
