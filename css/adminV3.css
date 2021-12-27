@@ -118,3 +118,11 @@
     text-transform: none;
     background:none;
 }
+
+.admin-content #dynarea p{
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    padding: 20px;
+    font-size: 3rem;
+}

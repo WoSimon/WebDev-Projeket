@@ -12,7 +12,7 @@
 
     <div class="admin-row">
 
-        <form name="UpdateMenu" method="POST" action="#">
+        <form name="UpdateMenu" method="POST" action="php/update-drink-inc.php">
             <h3><span>Getränke</span>daten Ändern</h3>
             <div class="inputBox">
                 <input name="DrinkID" type="text" placeholder="Getränke ID">
@@ -30,7 +30,7 @@
             <button type="submit" name="save" class="btn">Speichern</button>
         </form>
 
-        <form name="UpdateProducts" method="POST" action="#">
+        <form name="UpdateProducts" method="POST" action="php/update-product-inc.php">
             <h3><span>Produkt</span>daten Ändern</h3>
             <div class="inputBox">
                 <input name="ProductID" type="text" placeholder="Produkt ID">

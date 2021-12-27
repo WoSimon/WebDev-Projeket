@@ -21,8 +21,7 @@
         <link rel="stylesheet" href="css/style.css">
 
         <!-- Link zur Admin CSS Datei  -->
-        <link rel="stylesheet" href="css/adminV2.css">
-    
+        <link rel="stylesheet" href="css/adminV3.css">
         
     </head>
 <body>
@@ -86,6 +85,24 @@
         </div>
 
         <div id="dynarea">
+            <?php
+            
+                if (isset($_GET["error"])) {
+                    if($_GET["error"] == "nodrinkid"){
+                    echo "<p>Bitte geben Sie eine DrinkID an!</p>";
+                    }
+                    if($_GET["error"] == "drinkchanged"){
+                    echo "<p>Die Daten zu dem Getränk wurden erfolgreich geändert!</p>";
+                    }
+                    if($_GET["error"] == "noproductid"){
+                    echo "<p>Bitte geben Sie eine ProductID an!</p>";
+                    }
+                    if($_GET["error"] == "productchanged"){
+                    echo "<p>Die Daten zu dem Produkt wurden erfolgreich geändert!</p>";
+                    }
+                }         
+            
+            ?>
         </div>
 
     </section>
