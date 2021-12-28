@@ -17,11 +17,13 @@
          }
      }
 
-     if ($drinkAvailability == 1) {
+    //Wenn das Getränk verfügbar ist
+    if ($drinkAvailability == 1) {
         echo "<h3>" . $drinkName . "</h3>";
         echo "<div class='price'>" . $drinkPrice . "€</div>";
         echo "<div class='availability' id='av'>verfügbar</div>";
-     }
+    }
+    //Wenn das Getränk nicht verfügbar ist
      else {
         echo "<h3>" . $drinkName . "</h3>";
         echo "<div class='price'>" . $drinkPrice . "€</div>";

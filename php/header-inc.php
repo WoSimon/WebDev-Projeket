@@ -1,3 +1,4 @@
+<!-- Weil der Header als Extradatei in diesem Format vorliegt, kannn er an unterschiedlichen Stellen eingefügt werden -->
 <header class="header">
 
 <!-- Anfang Navbar mit Logo und Links -->

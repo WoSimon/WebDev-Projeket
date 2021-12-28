@@ -1,6 +1,8 @@
 <?php
+    //Start der PHP Session
     session_start();
 
+    //Errorhandeling: Wenn der Nutzer nicht eingeloggt ist wird er auf die Startseite zurückgeschickt
     if (!isset($_SESSION["CustomerID"])){
         header("location: start.php");
         exit();
@@ -35,12 +37,12 @@
     ?>
 
     <!-- Beginn Content -->
-
     <section class="past-res" id="past-res">
 
         <div class="past-res-row">
 
             <div class="past-res-content">
+                <!-- Tabelle mit den vergangenen Reservierungen -->
                 <table>
 
                     <tr>
@@ -51,6 +53,7 @@
                         <td class="col-name" width = "40%"><b>Produkt</b></td>
                         <td class="col-name" width= "40%"><b>Datum</b></td>
                     </tr>
+                    <!-- PHP wird genutzt um die Daten aus der DB zu holen -->
                     <?php
 
                         include_once "php/dbh-inc.php";
@@ -60,6 +63,7 @@
                         $res_sql = "SELECT `ReservationID`,`ProductID`,`Time` FROM `ProductReservation` WHERE `CustomerID` = " . $_SESSION["CustomerID"] . " ORDER BY `ReservationID` DESC;";
                         $rs = mysqli_query($conn, $res_sql);
 
+                        //Für jeden Eintrag in der Datenbank wird eine neue Zeite erstellt 
                         if($rs -> num_rows > 0){
                             while ($i = $rs -> fetch_assoc()){
                                 echo "<tr>";
@@ -75,6 +79,7 @@
                                 echo "</tr>";
                             }
                         }
+                        //Wenn noch nichts bestellt wurde wird eine Entsprechende Nachricht ausgegeben
                         else{
                             echo "<tr>";
                                 echo "<td colspan=3>Keine Bestellungen verfügbar</td>";
@@ -89,7 +94,6 @@
         </div>
 
     </section>
-
     <!-- Ende Content -->
 
     <!-- Footer wird integriert  -->

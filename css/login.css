@@ -27,14 +27,18 @@ html,body{
   place-items: center;
   background: var(--bg);
 }
+/*Ende der Allgemeine Definitionen*/
+
+/* Formatierung der Fehlermeldungen */
 body p{
   color: #fff;
   text-align: center;
   font-weight: bold;
   font-size: larger;
 }
-/*Ende der Allgemeine Definitionen*/
 
+
+/* Formatierung des Schließen Knopfs */
 .close-btn div{
   color:var(--border-color);
   cursor: pointer;
@@ -46,6 +50,7 @@ body p{
   color:var(--main-color);
 }
 
+/* Formatierung des wrappers */
 .wrapper{
   overflow: hidden;
   max-width: 390px;
@@ -80,6 +85,8 @@ body p{
   border-radius: 15px;
   background: var(--border-color);
 }
+
+/* Formatierung der Knöpfe zu ändern des Forms */
 .slide-controls .slide{
   height: 100%;
   width: 100%;
@@ -126,6 +133,8 @@ input[type="radio"]{
   cursor: default;
   user-select: none;
 }
+
+/* Formatierung der Formulare */
 .wrapper .form-container{
   width: 100%;
   overflow: hidden;

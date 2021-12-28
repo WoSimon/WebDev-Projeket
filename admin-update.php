@@ -1,5 +1,5 @@
 <?php
-
+    //Start der PHP Session und Errorhandeling
     session_start();
     if (!isset($_SESSION["AdminID"])) {
         header("location: admin-login.php?error=nologin");
@@ -9,9 +9,10 @@
 ?>
 
 <body>
-
+    
     <div class="admin-row">
-
+        
+        <!-- Formular zum ändern der Getränkekarte -->
         <form name="UpdateMenu" method="POST" action="php/update-drink-inc.php">
             <h3><span>Getränke</span>daten Ändern</h3>
             <div class="inputBox">
@@ -29,7 +30,8 @@
             </div>
             <button type="submit" name="save" class="btn">Speichern</button>
         </form>
-
+        
+        <!-- Formular zum ändern der Produkte -->
         <form name="UpdateProducts" method="POST" action="php/update-product-inc.php">
             <h3><span>Produkt</span>daten Ändern</h3>
             <div class="inputBox">

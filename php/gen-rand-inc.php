@@ -1,3 +1,4 @@
+<!-- Diese Datei soll drei Zufällig ausgewählte Kommentare aus der DB auswählen -->
 <?php
 
     include_once 'dbh-inc.php';

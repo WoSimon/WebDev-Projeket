@@ -1,3 +1,4 @@
+/* Allgmeine Formatierungen der Row */
 .past-res .past-res-row{
     border: var(--border);
     box-shadow: 0 0 20px rgba(255,255,255,.5);
@@ -9,12 +10,14 @@
     min-height: 56vh;
 }
 
+/* Formatierung des Containers */
 .past-res .past-res-row .past-res-content{
     border-radius: 3em;
     flex:1 1 45rem;
     padding:2rem;
 }
 
+/* Formatierung der Tabelle und deren Inhalte */
 .past-res .past-res-row .past-res-content table{
     color: #fff;
     width: 100%;

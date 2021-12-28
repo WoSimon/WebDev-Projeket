@@ -1,5 +1,5 @@
 <?php
-
+    //Session starten und Errorhandeling
     session_start();
     if (!isset($_SESSION["AdminID"])) {
         header("location: admin-login.php?error=nologin");
@@ -25,8 +25,8 @@
         
     </head>
 <body>
-
     <section class="admin-content">
+        <!-- Willkommensgruß an den eingeloggten Admin -->
             <?php
             
             echo "<h1>Willkommen " . $_SESSION['user'] . "!</h1>";
@@ -34,40 +34,48 @@
             ?>
         
         <div class="admin-row">
-    
+            <!-- Der Button um mit AJAX die Update Seite zu laden -->
             <div class="admin-button">
                 <button onclick="loadUpdate()" class="btn">Datenbankbestände ändern</button>
                 <a href="php/logout-inc.php" class="btn">Auloggen</a>
             </div>
-
+            
+            <!-- Die Statistiken -->
             <div class="admin-text">
                 <h2>Statistiken:</h2>
                 <br>
                 <br>
+                <!-- Die Statistiken kommen immer aus der Datenbank -->
                 <?php
                 
                 include_once "php/dbh-inc.php";
 
+                //Gesamtzahl an Kunden
                 $customers_sql = "SELECT * FROM `Customer`;";
                 $rs = mysqli_query($conn, $customers_sql);
                 $numCustomers = $rs -> num_rows;
                 
+                //Reservierte Produkte innerhalb der letzten Woche
                 $lastWeek_sql = "SELECT * FROM `ProductReservation` WHERE `Time` BETWEEN DATE_SUB(NOW(), INTERVAL 7 DAY) AND NOW();";
                 $rs = mysqli_query($conn, $lastWeek_sql);
                 $lastWeek = $rs -> num_rows;
                 
+                //Reservierte Produkte innerhalb des letzten Monats
                 $lastMonth_sql = "SELECT * FROM `ProductReservation` WHERE `Time` >= DATE(NOW() - INTERVAL 1 MONTH);";
                 $rs = mysqli_query($conn, $lastMonth_sql);
                 $lastMonth = $rs -> num_rows;
                 
+                //Reservierte Produkte innerhalb des letzten Jahres
                 $lastYear_sql = "SELECT * FROM `ProductReservation` WHERE `Time` >= DATE(NOW() - INTERVAL 1 Year);";
                 $rs = mysqli_query($conn, $lastYear_sql);
                 $lastYear = $rs -> num_rows;
-
+                
+                //Insgesamt reservirete Produkte
                 $reservations_sql = "SELECT * FROM `ProductReservation`;";
                 $rs = mysqli_query($conn, $reservations_sql);
                 $reservations = $rs -> num_rows;
-
+                
+                //Die Ausgaben der zuvor geholten Werte
                 echo "<h4>Gesamtzahl an Registrtierten Nutzern: <span>" . $numCustomers . "</span></h4>";
                 echo "<br>";
                 echo "<br>";
@@ -84,6 +92,7 @@
     
         </div>
 
+        <!-- Die Dynarea wird entwerder von AJAX Seiten gefüllt, oder sie Spiegelt Fehlermeldungen bei Fehlerhaften Eingaben in die Formulate (AJAX) wieder -->
         <div id="dynarea">
             <?php
             
@@ -106,9 +115,8 @@
         </div>
 
     </section>
-
-
-
+    
+    <!-- Der JS Code der AJAX umsetzbar macht -->
     <script>
 
         function loadUpdate(){
@@ -125,7 +133,6 @@
             xhttp.open("GET", "admin-update.php", true);
             xhttp.send();
         }
-
 
     </script>
     

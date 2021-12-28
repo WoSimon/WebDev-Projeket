@@ -1,17 +1,33 @@
 <!DOCTYPE html>
 <html>
+
    <head>
+
       <meta charset="utf-8">
+
       <title>Awesome Coffee | Einloggen und Registrieren</title>
+
+      <!-- Link zur Login CSS Datei -->
       <link rel="stylesheet" href="css/login.css">
+      
+      <!-- Link zu den Fontawesome Icons -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+      
+      <!-- Definitionen zur Umsetzung der "Resposiveness" -->
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
    </head>
+   
    <body>
+      
       <div class="wrapper">
+         
+         <!-- Der Knopf um die Login Seite zu schließen -->
          <div class="close-btn">
             <a href="start.php#home"><div class="fas fa-times-circle"></div></a>
          </div>
+         
+         <!-- Die Überschriften -->
          <div class="title-text">
             <div class="title login">
                Einloggen
@@ -20,7 +36,9 @@
                Registrieren
             </div>
          </div>
+         
          <div class="form-container">
+            <!-- Die Knöpfe zum Ändern der Ansicht zwischen Login und Registrieren -->
             <div class="slide-controls">
                <input type="radio" name="slide" id="login" checked>
                <input type="radio" name="slide" id="signup">
@@ -28,6 +46,7 @@
                <label for="signup" class="slide signup">Registrieren</label>
                <div class="slider-tab"></div>
             </div>
+            <!-- Die beiden Formulare -->
             <div class="form-inner">
                <form name="loginForm" action="php/login-inc.php" method="post" class="login">
                   <div class="field">
@@ -66,11 +85,12 @@
             </div>
          </div>
       </div>
-         <?php
+      <!-- Fehlermeldungen -->
+      <?php
                   
             if (isset($_GET["error"])) {
                if($_GET["error"] == "emailexists"){
-                  echo "<p>Diese Email Adresse ist bereits mit einem Account verbunden!</p>";
+               echo "<p>Diese Email Adresse ist bereits mit einem Account verbunden!</p>";
                }
                if($_GET["error"] == "pwdDontMatch"){
                   echo "<p>Die eingegebenen Passwörter stimmen nicht überein!</p>";
@@ -86,7 +106,9 @@
                }
             }
                   
-         ?>
+      ?>
+
+      <!-- JS zum Umsetzen der Funktionalität in den Radiobuttons die zwischen Login und Regestrieren wechseln -->
       <script>
          const loginText = document.querySelector(".title-text .login");
          const loginForm = document.querySelector("form.login");
@@ -106,5 +128,7 @@
            return false;
          });
       </script>
+
    </body>
+   
 </html>

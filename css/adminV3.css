@@ -1,3 +1,4 @@
+/* Formatierung der Überschrift */
 .admin-content h1{
     color: #fff;
     font-size: 5rem;
@@ -5,6 +6,7 @@
     padding: 20px;
 }
 
+/* Formatierung des Inhalts der Admin-row */
 .admin-content .admin-row{
     height: max-content;
     display: flex;
@@ -86,12 +88,7 @@
     box-shadow: 0 0 15px var(--main-color);
 }
 
-.admin-content .admin-row form .inputBox span{
-    color:#fff;
-    font-size: 2rem;
-    padding-left: 2rem;
-}
-
+/* Formatierung der unterschiedlichen Inputarten */
 .admin-content .admin-row form .inputBox input{
     width: 100%;
     padding:2rem;
@@ -110,15 +107,7 @@
     background: none;
 }
 
-.admin-content .admin-row form .inputBox textarea{
-    width: 100%;
-    padding:2rem;
-    font-size: 1.7rem;
-    color:#fff;
-    text-transform: none;
-    background:none;
-}
-
+/* Formatierung der Fehlermeldungen */
 .admin-content #dynarea p{
     color: #fff;
     text-align: center;

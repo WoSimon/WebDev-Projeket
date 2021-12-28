@@ -1,3 +1,4 @@
+<!-- Weil der Footer als Extradatei in diesem Format vorliegt, kannn er an unterschiedlichen Stellen eingefügt werden -->
 <section class="footer">
 
     <div class="share">
