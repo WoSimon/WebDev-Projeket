@@ -60,7 +60,7 @@
 
                         echo $_SESSION['CustomerID'];
 
-                        $res_sql = "SELECT `ReservationID`,`ProductID`,`Time` FROM `ProductReservation` WHERE `CustomerID` = " . $_SESSION["CustomerID"] . " ORDER BY `ReservationID` DESC;";
+                        $res_sql = "SELECT `ReservationID`,`ProductID`,`Time` FROM `ProductReservation` WHERE `CustomerID` = " . $_SESSION["CustomerID"] . " ORDER BY `Time` DESC;";
                         $rs = mysqli_query($conn, $res_sql);
 
                         //Für jeden Eintrag in der Datenbank wird eine neue Zeite erstellt 
