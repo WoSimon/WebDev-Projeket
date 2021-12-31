@@ -17,15 +17,15 @@
     $Mailtext = "Wir haben eine Email von " .$name. " über das Kontaktformular der Website erhalten.\n\nDer Inhalt der Nachricht ist:\n" .$content;  
     
     //Wenn die Nachricht eine Bewertung ist, wird diese in der DB gespeichert
-    if ($subject = "review") {
+    if ($subject === "review") {
         $sql = "INSERT INTO `Message`(`Message_ID`, `Content`, `Sender_Name`, `Sender_Mail`) VALUES ('$id','$content','$name','$mail');";
         mysqli_query($conn, $sql);
+        header("Location: ../start.php?MessageSend=DBsuccess#contact");
     }
     //Wenn nicht, wird eine Mail mit Bitte um Manuelle Bearbeitung der Anfrage versendet
     else {
         mail($MailTo, $subject, $Mailtext, $MailHeaders);
+        header("Location: ../start.php?MessageSend=Mailsuccess#contact");
     }
-
-    header("Location: ../start.php?MessageSend=success#contact");
 
 ?>
