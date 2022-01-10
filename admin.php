@@ -116,7 +116,7 @@
 
     </section>
     
-    <!-- Der JS Code der AJAX umsetzbar macht -->
+    <!-- Code der AJAX umsetzbar macht -->
     <script>
 
         function loadUpdate(){
